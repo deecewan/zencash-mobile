@@ -1,18 +1,14 @@
-import React from 'react';
+import PropTypes from 'prop-types'
+import React from 'react'
 
 import {
-  Page,  
-  Toolbar,  
-  BackButton,
-  Button,
-  List,
-  ListHeader,
-  ListItem,
-  Input
-} from 'react-onsenui';
+  Page,
+  Toolbar,
+  Button
+} from 'react-onsenui'
 
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 import { setSecretPhrase, setSecretItems } from '../actions/Secrets'
 import { phraseToSecretItems } from '../utils/wallet'
@@ -20,7 +16,7 @@ import { phraseToSecretItems } from '../utils/wallet'
 import chance from 'chance'
 
 class SetupPage extends React.Component {
-  constructor(props){
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -31,13 +27,14 @@ class SetupPage extends React.Component {
     this.handleNewWallet = this.handleNewWallet.bind(this)
   }
 
-  handleNewWallet(){
+  handleNewWallet () {
     // generate random phrase
-    var c = new chance()
+    const Chance = chance
+    var c = new Chance()
     var randomPhrase = c.sentence({words: 12})
 
     // want 64 max
-    if (randomPhrase.length > 64){
+    if (randomPhrase.length > 64) {
       randomPhrase = randomPhrase.slice(0, 64)
     }
 
@@ -47,7 +44,7 @@ class SetupPage extends React.Component {
     this.handleLoadWallet(randomPhrase)
   }
 
-  handleLoadWallet(phrase) {
+  handleLoadWallet (phrase) {
     const secretItems = phraseToSecretItems(phrase)
 
     this.props.setSecretPhrase(phrase)
@@ -58,27 +55,27 @@ class SetupPage extends React.Component {
     this.props.setHasExistingWallet(true)
   }
 
-  renderToolbar() {
+  renderToolbar () {
     return (
       <Toolbar>
         <div className='center'>
           ZEN Wallet Setup
-        </div>  
+        </div>
       </Toolbar>
-    );
+    )
   }
 
-  render() {
+  render () {
     return (
       <Page renderToolbar={this.renderToolbar.bind(this)}>
-        <div style={{padding: '12px 12px 0 12px'}}>                            
+        <div style={{padding: '12px 12px 0 12px'}}>
           <p>
             <textarea
               style={{width: '100%'}}
               onChange={(e) => this.setState({ tempSecretPhrase: e.target.value })}
               className="textarea" rows="3" placeholder="secret phrase"
               maxLength={64}
-              >
+            >
             </textarea>
           </p>
 
@@ -86,7 +83,7 @@ class SetupPage extends React.Component {
             onClick={() => this.handleLoadWallet(this.state.tempSecretPhrase)}
             disabled={this.state.tempSecretPhrase.length < 16}
             style={{width: '100%'}}
-            >Recover Wallet
+          >Recover Wallet
           </Button>
 
           <div style={{paddingTop: '20px', paddingBottom: '20px', textAlign: 'center'}}>OR</div>
@@ -94,17 +91,25 @@ class SetupPage extends React.Component {
           <Button
             onClick={() => this.handleNewWallet()}
             style={{width: '100%'}}
-            >New Wallet
-          </Button>  
-        </div>  
+          >New Wallet
+          </Button>
+        </div>
       </Page>
-    );
+    )
   }
 }
 
-function mapStateToProps(state){  
+SetupPage.propTypes = {
+  context: PropTypes.object.isRequired,
+  navigator: PropTypes.object.isRequired,
+  setSecretPhrase: PropTypes.func.isRequired,
+  setSecretItems: PropTypes.func.isRequired,
+  setHasExistingWallet: PropTypes.func.isRequired
+}
+
+function mapStateToProps (state) {
   return {
-    context: state.context  
+    context: state.context
   }
 }
 
@@ -119,4 +124,4 @@ function matchDispatchToProps (dispatch) {
   )
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(SetupPage);
+export default connect(mapStateToProps, matchDispatchToProps)(SetupPage)

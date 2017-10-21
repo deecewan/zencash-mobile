@@ -1,31 +1,30 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
 import {
   Page,
-  Toolbar, 
-  ToolbarButton, 
+  Toolbar,
   BackButton,
   Button,
   Toast
-} from 'react-onsenui';
+} from 'react-onsenui'
 
 import QRCode from 'qrcode.react'
 
 import TRANSLATIONS from '../translations'
 
 class AddressInfoPage extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
       toastShown: false
     }
-  } 
+  }
 
-  renderToolbar() {
+  renderToolbar () {
     const CUR_LANG = this.props.settings.language
     const addressLang = TRANSLATIONS[CUR_LANG].General.address
 
@@ -38,10 +37,10 @@ class AddressInfoPage extends React.Component {
           { addressLang }
         </div>
       </Toolbar>
-    );
+    )
   }
 
-  render() {
+  render () {
     const CUR_LANG = this.props.settings.language
     const copyToClipboardLang = TRANSLATIONS[CUR_LANG].AddressInfoPage.copyToClipboard
 
@@ -59,11 +58,11 @@ class AddressInfoPage extends React.Component {
           <Button
             onClick={() => {
               cordova.plugins.clipboard.copy(this.props.context.address)
-              this.setState({toastShown: true})               
+              this.setState({toastShown: true})
             }}
-            style={{fontSize: '12px', marginBottom: '10px', width: '90%'}}>                  
+            style={{fontSize: '12px', marginBottom: '10px', width: '90%'}}>
             { copyToClipboardLang }
-          </Button> 
+          </Button>
         </div>
 
         <Toast isOpen={this.state.toastShown}>
@@ -75,15 +74,21 @@ class AddressInfoPage extends React.Component {
           </button>
         </Toast>
       </Page>
-    );
+    )
   }
 }
 
-function mapStateToProps(state){  
-  return {    
+AddressInfoPage.propTypes = {
+  settings: PropTypes.object.isRequired,
+  context: PropTypes.object.isRequired,
+  navigator: PropTypes.object.isRequired
+}
+
+function mapStateToProps (state) {
+  return {
     context: state.context,
     settings: state.settings
   }
 }
 
-export default connect(mapStateToProps)(AddressInfoPage);
+export default connect(mapStateToProps)(AddressInfoPage)

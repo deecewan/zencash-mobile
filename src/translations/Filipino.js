@@ -1,9 +1,12 @@
-export const FILIPINO_TRANSLATION = {
+// @flow
+import type { TRANSLATION_OBJ } from '../types'
+
+export const FILIPINO_TRANSLATION: TRANSLATION_OBJ = {
   General: {
     loading: 'Nagsisimula...',
     address: 'Address',
     privateKey: 'Pribadong Susi',
-    cancel: 'Kansela',    
+    cancel: 'Kansela',
     fees: 'Babayaran sa Network',
     version: 'Bersyon',
     in: 'Papasok',
@@ -11,14 +14,14 @@ export const FILIPINO_TRANSLATION = {
   },
   MainPage: {
     title: 'ZEN Wallet',
-    value: 'Halaga',        
+    value: 'Halaga',
     send: 'Padala',
     received: 'Natanggap',
-    sent: 'Napadala',    
+    sent: 'Napadala',
     noTxFound: 'Walang pang transaksiyon.'
   },
   AddressInfoPage: {
-    copyToClipboard: 'Kopyahin ang Address sa Clipboard',
+    copyToClipboard: 'Kopyahin ang Address sa Clipboard'
   },
   SendPage: {
     title: 'Magpadala ng ZEN',
@@ -27,11 +30,11 @@ export const FILIPINO_TRANSLATION = {
     balance: 'Balanse',
     networkFee: 'Bayad sa Network',
     slowTx: 'Mabagal na Tx',
-    fastTx: 'Mabilis na Tx',    
+    fastTx: 'Mabilis na Tx',
     from: 'Mula sa',
     toAddress: ' Address na Papadalhan',
-    amount: 'Halaga',    
-    max: 'Lahat na puwede',    
+    amount: 'Halaga',
+    max: 'Lahat na puwede',
     send: 'Ipadala',
     txSuccessful: 'Tagumpay na Transaksiyon! Click dito para makita ang detalye ng transaksiyon.',
     confirmSend: 'Gusto ko ipadala ang ZEN na ito.',
@@ -42,21 +45,21 @@ export const FILIPINO_TRANSLATION = {
     notEnoughZEN: 'Hindi sapat na kumpirmadong ZEN sa account para gawin ang transaksiyon.',
     noCameraPermissions: 'Walang pahintulot sa camera. Pwede mong pahintulutan ang camera sa iyong settings.'
   },
-  TxDetailPage:{
+  TxDetailPage: {
     txid: 'Transaksyong Id',
     blockhash: 'Block Hash',
     blockheight: 'Block Height',
-    confirmations: 'Mga Kumpirmasyon',    
+    confirmations: 'Mga Kumpirmasyon'
   },
   SettingsPage: {
-    title: 'Settings',    
+    title: 'Settings',
     language: 'Lengguwahe',
     currency: 'Salapi',
     secretPhrase: 'Pakita ang Pribadong Parilala',
     showPrivateKeys: 'Pakita ang Pribadong Susi',
     recoverExistingWallet: 'Magbalik ng dating Wallet',
     current: 'Kasalukuyan'
-  },  
+  },
   SecretPhrasePage: {
     title: 'Pribadong Parilala'
   },
@@ -71,7 +74,7 @@ export const FILIPINO_TRANSLATION = {
     recover: 'Ibalik ang dating Wallet'
   },
   AboutPage: {
-    title: 'Karagdagang Impormasiyon',
+    title: 'Karagdagang Impormasiyon'
   },
   PinPage: {
     changePinTitle: 'Palitan ang PIN',

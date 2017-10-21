@@ -1,9 +1,12 @@
-export const SERBIAN_TRANSLATION = {
+// @flow
+import type { TRANSLATION_OBJ } from '../types'
+
+export const SERBIAN_TRANSLATION: TRANSLATION_OBJ = {
   General: {
     loading: 'učitavam...',
     address: 'Adresa',
     privateKey: 'Privatni Ključ',
-    cancel: 'Otkaži',    
+    cancel: 'Otkaži',
     fees: 'Provizije',
     version: 'Verzija',
     in: 'Ulaz',
@@ -11,14 +14,14 @@ export const SERBIAN_TRANSLATION = {
   },
   MainPage: {
     title: 'ZEN Novčanik',
-    value: 'Vrednost',        
+    value: 'Vrednost',
     send: 'Pošalji',
     received: 'Primljene',
-    sent: 'Poslate',    
+    sent: 'Poslate',
     noTxFound: 'Nema istorije transakcija.'
   },
   AddressInfoPage: {
-    copyToClipboard: 'Prekopiraj Adresu na Clipboard',
+    copyToClipboard: 'Prekopiraj Adresu na Clipboard'
   },
   SendPage: {
     title: 'Pošalji ZEN',
@@ -27,11 +30,11 @@ export const SERBIAN_TRANSLATION = {
     balance: 'Balans',
     networkFee: 'Mrežna Provizija',
     slowTx: 'Spora Tx',
-    fastTx: 'Brza Tx',    
+    fastTx: 'Brza Tx',
     from: 'Od',
     toAddress: 'Za Adresu',
-    amount: 'Suma',    
-    max: 'Max',    
+    amount: 'Suma',
+    max: 'Max',
     send: 'Pošalji',
     txSuccessful: 'Uspešna transakcija! Kliknite ovde da vidite vašu transakciju.',
     confirmSend: 'Želim da pošaljem ove ZEN',
@@ -42,21 +45,21 @@ export const SERBIAN_TRANSLATION = {
     notEnoughZEN: 'Nedovoljno potvrđenih ZEN na nalogu da bi se obavila transakcija.',
     noCameraPermissions: 'Nema dozvole za kameru. Možete dozvoliti pristup kameri u vašim podešavanjima.'
   },
-  TxDetailPage:{
+  TxDetailPage: {
     txid: 'Id Transakcije',
     blockhash: 'Haš Bloka',
     blockheight: 'Visina Bloka',
-    confirmations: 'Potvrde',    
+    confirmations: 'Potvrde'
   },
   SettingsPage: {
-    title: 'Podešavanja',    
+    title: 'Podešavanja',
     language: 'Jezik',
     currency: 'Valuta',
     secretPhrase: 'Prikaži Tajnu Frazu',
     showPrivateKeys: 'Prikaži Privatne Ključeve',
     recoverExistingWallet: 'Oporavi Postojeći Novčanik',
     current: 'Trenutni'
-  },  
+  },
   SecretPhrasePage: {
     title: 'Tajna Fraza'
   },
@@ -71,7 +74,7 @@ export const SERBIAN_TRANSLATION = {
     recover: 'Oporavi'
   },
   AboutPage: {
-    title: 'O Programu',
+    title: 'O Programu'
   },
   PinPage: {
     changePinTitle: 'Promeni PIN',

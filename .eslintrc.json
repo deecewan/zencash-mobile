@@ -1,0 +1,6 @@
+{
+    "extends": ["standard", "plugin:flowtype/recommended", "plugin:react/recommended"],
+    "plugins": [
+        "flowtype"
+    ]
+}

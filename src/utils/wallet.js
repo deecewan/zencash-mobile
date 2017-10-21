@@ -1,10 +1,9 @@
-var bitcoinjs = require('bitcoinjs-lib');
-var bip32utils = require('bip32-utils');
-var zencashjs = require('zencashjs');
-var bs58check = require('bs58check');
+var bitcoinjs = require('bitcoinjs-lib')
+var bip32utils = require('bip32-utils')
+var zencashjs = require('zencashjs')
 
 // Hierarchical Deterministic wallet
-function phraseToSecretItems(phraseStr) {
+function phraseToSecretItems (phraseStr) {
   // Seed key, make it fucking strong
   // phraseStr: string
   const seedHex = Buffer.from(phraseStr).toString('hex')
@@ -14,15 +13,15 @@ function phraseToSecretItems(phraseStr) {
   var chain = new bip32utils.Chain(hdNode)
 
   // Creates 3 address from the same chain
-  for (var k = 0; k < 2; k++){
+  for (var k = 0; k < 2; k++) {
     chain.next()
   }
 
   // Get private keys from them
-  var secretItems = chain.getAll().map(function(x) {
+  var secretItems = chain.getAll().map(function (x) {
     // Get private key (WIF)
     const pkWIF = chain.derive(x).keyPair.toWIF()
-    
+
     // Private key
     const privKey = zencashjs.address.WIFToPrivKey(pkWIF)
 
@@ -37,11 +36,10 @@ function phraseToSecretItems(phraseStr) {
       privateKey: pkWIF
     }
   })
-  
+
   return secretItems
 }
 
-
 module.exports = {
-    phraseToSecretItems: phraseToSecretItems  
+  phraseToSecretItems: phraseToSecretItems
 }

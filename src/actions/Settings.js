@@ -91,7 +91,7 @@ export const LANGUAGES = [
   LANG_RUSSIAN,
   LANG_SERBIAN,
   LANG_SPANISH,
-  LANG_SWEDISH  
+  LANG_SWEDISH
 ]
 
 // Actions
@@ -99,21 +99,21 @@ export const SET_LANGUAGE = 'SET_LANGUAGE'
 export const SET_CURRENCY = 'SET_CURRENCY'
 export const SET_WALLET_PIN = 'SET_WALLET_PIN'
 
-export function setWalletPin(pin) {
+export function setWalletPin (pin) {
   return {
     type: SET_WALLET_PIN,
     pin
   }
 }
 
-export function setLanguage(language){
+export function setLanguage (language) {
   return {
     type: SET_LANGUAGE,
     language
   }
 }
 
-export function setCurrency(currency){
+export function setCurrency (currency) {
   return {
     type: SET_CURRENCY,
     currency

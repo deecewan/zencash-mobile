@@ -1,9 +1,12 @@
-export const AFRIKAANS_TRANSLATION = {
+// @flow
+import type { TRANSLATION_OBJ } from '../types'
+
+export const AFRIKAANS_TRANSLATION: TRANSLATION_OBJ = {
   General: {
     loading: 'besig...',
     address: 'Adres',
     privateKey: 'Privaat Sleutel',
-    cancel: 'Kanselleer',    
+    cancel: 'Kanselleer',
     fees: 'Fooie',
     version: 'Weergawe',
     in: 'In',
@@ -11,14 +14,14 @@ export const AFRIKAANS_TRANSLATION = {
   },
   MainPage: {
     title: 'ZEN Beursie',
-    value: 'Waarde',        
+    value: 'Waarde',
     send: 'Gestuur',
     received: 'Ontvang',
-    sent: 'Gestuur',    
+    sent: 'Gestuur',
     noTxFound: 'Geen transaksiegeskiedenis gevind nie.'
   },
   AddressInfoPage: {
-    copyToClipboard: 'Kopieer Adres na Klipbord',
+    copyToClipboard: 'Kopieer Adres na Klipbord'
   },
   SendPage: {
     title: 'Stuur ZEN',
@@ -27,11 +30,11 @@ export const AFRIKAANS_TRANSLATION = {
     balance: 'Balans',
     networkFee: 'Netwerk Fooi',
     slowTx: 'Stadige Tx',
-    fastTx: 'Vinnige Tx',    
+    fastTx: 'Vinnige Tx',
     from: 'Van',
     toAddress: 'Na Adres',
-    amount: 'Bedrag',    
-    max: 'Maksimum',    
+    amount: 'Bedrag',
+    max: 'Maksimum',
     send: 'Stuur',
     txSuccessful: 'Transkripsie suksesvol! Klik hier om jou transaksie te sien.',
     confirmSend: 'Ek wil hierdie ZEN stuur',
@@ -42,21 +45,21 @@ export const AFRIKAANS_TRANSLATION = {
     notEnoughZEN: 'Nie genoeg ZEN transaksie uit te voer nie',
     noCameraPermissions: 'Geen kamera toestemmings nie. U kan die kamera toestemmings in u instellings toelaat.'
   },
-  TxDetailPage:{
+  TxDetailPage: {
     txid: 'Transaksie Id',
     blockhash: 'Blok Hash',
     blockheight: 'Blok Hoogte',
-    confirmations: 'Bevestigings',    
+    confirmations: 'Bevestigings'
   },
   SettingsPage: {
-    title: 'Instellings',    
+    title: 'Instellings',
     language: 'Taal',
     currency: 'Geld Eenheid',
     secretPhrase: 'Wys Geheime sin',
     showPrivateKeys: 'Wys Privaat Sleutel',
     recoverExistingWallet: 'Herstel Bestaande Beursie.',
     current: 'Current'
-  },  
+  },
   SecretPhrasePage: {
     title: 'Geheime sin'
   },
@@ -71,7 +74,7 @@ export const AFRIKAANS_TRANSLATION = {
     recover: 'Herstel'
   },
   AboutPage: {
-    title: 'Oor',
+    title: 'Oor'
   },
   PinPage: {
     changePinTitle: 'Verander PIN',
