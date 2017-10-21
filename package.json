@@ -66,6 +66,7 @@
     "redux": "^3.6.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.1.0",
+    "sentencer": "^0.1.5",
     "simple-plist": "^0.2.1",
     "style-loader": "^0.18.2",
     "stylus": "^0.54.5",
@@ -73,6 +74,7 @@
     "url-loader": "^0.5.9",
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1",
+    "wordnet-db": "^3.1.6",
     "zencashjs": "^1.1.6-a"
   },
   "dependencies": {

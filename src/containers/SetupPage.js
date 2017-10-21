@@ -13,7 +13,7 @@ import { connect } from 'react-redux'
 import { setSecretPhrase, setSecretItems } from '../actions/Secrets'
 import { phraseToSecretItems } from '../utils/wallet'
 
-import chance from 'chance'
+import Sentencer from 'sentencer'
 
 class SetupPage extends React.Component {
   constructor (props) {
@@ -28,18 +28,31 @@ class SetupPage extends React.Component {
   }
 
   handleNewWallet () {
-    // generate random phrase
-    const Chance = chance
-    var c = new Chance()
-    var randomPhrase = c.sentence({words: 12})
+    // generate random phrase    
+    var randomPhrase = []
 
-    // want 64 max
-    if (randomPhrase.length > 64) {
-      randomPhrase = randomPhrase.slice(0, 64)
+    // Want 9 words
+    while (randomPhrase.length < 9) {
+      // Noun/Nouns
+      if (Math.random() > 0.5) {
+        // Noun
+        if (Math.random() > 0.5) {
+          randomPhrase = randomPhrase.concat(Sentencer.make('{{ noun }}'))
+        }
+
+        // Nouns
+        else {
+          randomPhrase = randomPhrase.concat(Sentencer.make('{{ nouns }}'))
+        }
+      }
+
+      // Adjective
+      else {
+        randomPhrase = randomPhrase.concat(Sentencer.make('{{ adjective }}'))
+      }
     }
 
-    // trim whitespace at the back
-    randomPhrase = randomPhrase.trim()
+    randomPhrase = randomPhrase.join(' ')
 
     this.handleLoadWallet(randomPhrase)
   }

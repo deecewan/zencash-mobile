@@ -6,7 +6,7 @@ var zencashjs = require('zencashjs')
 function phraseToSecretItems (phraseStr) {
   // Seed key, make it fucking strong
   // phraseStr: string
-  const seedHex = Buffer.from(phraseStr).toString('hex')
+  const seedHex = Buffer.from(phraseStr.slice(0, 64)).toString('hex')
 
   // chains
   const hdNode = bitcoinjs.HDNode.fromSeedHex(seedHex)
