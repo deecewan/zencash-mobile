@@ -59,4 +59,4 @@ Icons are a bit of a bitch to setup for iOS. Make sure you've added the ios plat
 
 [dropnib](https://github.com/dropnib)
 
-[rubyxroot] (https://github.com/rubyxroot)
+[rubyxroot](https://github.com/rubyxroot)
